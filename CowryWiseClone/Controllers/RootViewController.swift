@@ -15,9 +15,11 @@ class RootViewController: UIViewController, UICollectionViewDelegateFlowLayout {
     lazy var onBoardingCollectionView: UICollectionView = {
         
         let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 0
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .systemPink
+        collectionView.backgroundColor = .white
         
         collectionView.delegate = self
         collectionView.dataSource = self
