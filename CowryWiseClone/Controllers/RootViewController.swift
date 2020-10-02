@@ -37,7 +37,7 @@ class RootViewController: UIViewController, UICollectionViewDelegateFlowLayout {
         
         onBoardingCollectionView.anchorToTop(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor)
         
-        onBoardingCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: RootViewController.identifier)
+        onBoardingCollectionView.register(PageCell.self, forCellWithReuseIdentifier: RootViewController.identifier)
         
     }
 

@@ -22,8 +22,6 @@ extension RootViewController: UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RootViewController.identifier, for: indexPath)
         
-        cell.backgroundColor = .systemBlue
-        
         return cell
         
     }
