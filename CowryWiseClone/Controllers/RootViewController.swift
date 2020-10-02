@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RootViewController: UIViewController {
+class RootViewController: UIViewController, UICollectionViewDelegateFlowLayout {
     
     static let identifier = "CellIdentifier"
     
@@ -29,7 +29,6 @@ class RootViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         view.addSubview(onBoardingCollectionView)
         
@@ -39,26 +38,4 @@ class RootViewController: UIViewController {
         
     }
 
-}
-
-extension RootViewController: UICollectionViewDelegate {
-    
-}
-
-extension RootViewController: UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RootViewController.identifier, for: indexPath)
-        
-        cell.backgroundColor = .systemBlue
-        
-        return cell
-        
-    }
-    
 }
