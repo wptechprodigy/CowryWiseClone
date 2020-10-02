@@ -20,6 +20,7 @@ class RootViewController: UIViewController, UICollectionViewDelegateFlowLayout {
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .white
+        collectionView.isPagingEnabled = true
         
         collectionView.delegate = self
         collectionView.dataSource = self
