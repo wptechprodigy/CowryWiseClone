@@ -8,13 +8,22 @@
 
 import UIKit
 
-class RootViewController: UIViewController {
+class RootViewController: UIViewController, UICollectionViewDelegateFlowLayout {
     
-    let onBoardingCollectionView: UICollectionView = {
+    static let identifier = "CellIdentifier"
+    
+    lazy var onBoardingCollectionView: UICollectionView = {
         
         let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 0
+        
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .systemPink
+        collectionView.backgroundColor = .white
+        collectionView.isPagingEnabled = true
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
         
         return collectionView
         
@@ -23,13 +32,13 @@ class RootViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         view.addSubview(onBoardingCollectionView)
         
         onBoardingCollectionView.anchorToTop(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor)
         
+        onBoardingCollectionView.register(PageCell.self, forCellWithReuseIdentifier: RootViewController.identifier)
+        
     }
 
 }
-
